@@ -1,0 +1,6 @@
+C:\Users\Anna\Desktop\Мои программыС#\Airport\Airport\bin\Debug\Airport.exe.config
+C:\Users\Anna\Desktop\Мои программыС#\Airport\Airport\bin\Debug\Airport.exe
+C:\Users\Anna\Desktop\Мои программыС#\Airport\Airport\bin\Debug\Airport.pdb
+C:\Users\Anna\Desktop\Мои программыС#\Airport\Airport\obj\Debug\Airport.exe
+C:\Users\Anna\Desktop\Мои программыС#\Airport\Airport\obj\Debug\Airport.pdb
+C:\Users\Anna\Desktop\Мои программыС#\Airport\Airport\obj\Debug\Airport.csprojResolveAssemblyReference.cache
