@@ -8,15 +8,15 @@ namespace Airport
 {
     class Passengers
     {
-        public string name;
-        public string secondname;
-        public string pasport;
-        public string dateofbirthday;
-        public Sex sex;
-        public Nationality nationality;
+        public string Name;
+        public string Secondname;
+        public string Pasport;
+        public string Dateofbirthday;
+        public Sex Sex;
+        public Nationality Nationality;
     }
     enum Nationality
-    { 
+    {
         Unknown = 0,
         Ukranian = 1,
         Jew = 2,

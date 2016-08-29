@@ -8,13 +8,14 @@ namespace Airport
 {
     class Prices
     {
-        public Classprice classprice;
+        public Classprice Classprice;
     }
+
     enum Classprice
     {
- Unknown = 0,
-    Economy = 1000,
-    Bissnes = 2000,
+        Unknown = 0,
+        Economy = 1000,
+        Bissnes = 2000,
     }
 
 }

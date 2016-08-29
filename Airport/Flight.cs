@@ -6,44 +6,44 @@ using System.Threading.Tasks;
 
 namespace Airport
 {
-    class ArrFlight:FlightBase 
+    class ArrFlight : FlightBase
     {
-        
-    
+
+
         public ArrFlight(Random random)
         {
-            status = (Status)random.Next(3, 9);
+            Status = (Status)random.Next(3, 9);
         }
     }
-    
-    class DepFlight:FlightBase 
-    {   
+
+    class DepFlight : FlightBase
+    {
         public DepFlight(Random random)
         {
-            status = (Status)random.Next(1, 9);
+            Status = (Status)random.Next(1, 9);
         }
     }
-    abstract class  FlightBase 
+    abstract class FlightBase
     {
-        public List<Passengers> passengersarr = new List<Passengers>();
-        public Prices[] pricesarr = new Prices[1];
-        public string flightnumber;
-        public string direction;
-        public string datetime;
-        public string terminal;
-        public string gate;
-        public Status status;
+        public List<Passengers> Passengersarr = new List<Passengers>();
+        public Prices[] Pricesarr = new Prices[1];
+        public string Flightnumber;
+        public string Direction;
+        public string Datetime;
+        public string Terminal;
+        public string Gate;
+        public Status Status;
     }
     enum Status
     {
-    unknown=0,
-    checkIn=1,
-    gateClosed=2,
-    arrived=3,
-    departedAt=4,
-    canceled=5, 
-    expectedAt=6, 
-    delayed=7, 
-    inFlight=8
+        Unknown = 0,
+        CheckIn = 1,
+        GateClosed = 2,
+        Arrived = 3,
+        DepartedAt = 4,
+        Canceled = 5,
+        ExpectedAt = 6,
+        Delayed = 7,
+        InFlight = 8
     }
 }

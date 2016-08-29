@@ -42,14 +42,14 @@ namespace Airport
             Console.SetCursorPosition(10, 5);
             Menu();
 
-           
-            
+
+
 
         }
         static public void Menu()
         {
             Console.Clear();
-            
+
             Console.WriteLine("                                  Welcome!");
             Console.WriteLine("                                ************   ");
             Console.WriteLine("       _____________________________________________________________");
@@ -66,6 +66,7 @@ namespace Airport
             switch (key.Key)
             {
                 case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
                     Console.Clear();
                     airport.PrintArrivals();
                     Console.ReadKey();
@@ -73,6 +74,7 @@ namespace Airport
                     break;
 
                 case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
                     Console.Clear();
                     airport.PrintDeparture();
                     Console.ReadKey();
@@ -80,6 +82,7 @@ namespace Airport
                     break;
 
                 case ConsoleKey.D3:
+                case ConsoleKey.NumPad3:
                     Console.Clear();
                     airport.PrintPriceClassInfo();
                     Console.ReadKey();
@@ -87,6 +90,7 @@ namespace Airport
                     break;
 
                 case ConsoleKey.D4:
+                case ConsoleKey.NumPad4:
                     Console.Clear();
                     airport.PrintPassengersInfo();
                     Console.ReadKey();
@@ -94,13 +98,15 @@ namespace Airport
                     break;
 
                 case ConsoleKey.D5:
+                case ConsoleKey.NumPad5:
                     Console.Clear();
                     Menu2();
                     Console.ReadKey();
-                    
+
                     break;
 
                 case ConsoleKey.D6:
+                case ConsoleKey.NumPad6:
                     Console.Clear();
                     airport.Search();
                     Console.ReadKey();
@@ -115,17 +121,18 @@ namespace Airport
         }
         static public void Menu2()
         {
-           
+
             Console.WriteLine("             Press 1. If you want to Create information");
             Console.WriteLine("            Press 2. If you want to Delete information");
             Console.WriteLine("           Press 3. If you want to Edit information");
             Console.WriteLine("          Press 4. If you want back to main menu");
-            
+
             ConsoleKeyInfo key = new ConsoleKeyInfo();
             key = Console.ReadKey();
             switch (key.Key)
             {
                 case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
                     Console.Clear();
                     airport.Create();
                     Console.ReadKey();
@@ -133,6 +140,7 @@ namespace Airport
                     break;
 
                 case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
                     Console.Clear();
                     airport.Del();
                     Console.ReadKey();
@@ -140,6 +148,7 @@ namespace Airport
                     break;
 
                 case ConsoleKey.D3:
+                case ConsoleKey.NumPad3:
                     Console.Clear();
                     airport.Edit();
                     Console.ReadKey();
@@ -147,6 +156,7 @@ namespace Airport
                     break;
 
                 case ConsoleKey.D4:
+                case ConsoleKey.NumPad4:
                     Console.Clear();
                     Menu();
                     Console.ReadKey();

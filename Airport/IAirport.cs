@@ -12,10 +12,10 @@ namespace Airport
         void PrintDeparture();
         void PrintPriceClassInfo();
         void PrintPassengersInfo();
-       void Create();
-     void Del();
-    void Edit();
-    void Search();
-        
+        void Create();
+        void Del();
+        void Edit();
+        void Search();
+
     }
 }
