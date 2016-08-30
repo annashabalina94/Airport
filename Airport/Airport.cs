@@ -12,7 +12,8 @@ namespace Airport
         {
             Random random = new Random();
 
-            var flight1 = new ArrFlight(random);
+
+            var flight1 = new ArrFlight(random, Classprice.Bissnes, Classprice.Economy);
             flight1.Flightnumber = "FS 4422";
             flight1.Direction = "Abu-Dhabi";
             flight1.Datetime = "14:22";
@@ -26,12 +27,10 @@ namespace Airport
             pasan1.Nationality = Nationality.Arab;
             pasan1.Sex = Sex.Male;
             flight1.Passengersarr.Add(pasan1);
-            var price1 = new Prices();
-            price1.Classprice = Classprice.Bissnes;
-            flight1.Pricesarr[0] = price1;
+           // flight1.Classprice = Classprice.Bissnes;
             flights.Add(flight1);
 
-            var flight2 = new ArrFlight(random);
+            var flight2 = new ArrFlight(random, Classprice.Bissnes, Classprice.Economy);
             flight2.Flightnumber = "MN 7564";
             flight2.Direction = "Paris";
             flight2.Datetime = "13:00";
@@ -45,12 +44,10 @@ namespace Airport
             pasan2.Nationality = Nationality.French;
             pasan2.Sex = Sex.Male;
             flight2.Passengersarr.Add(pasan2);
-            var price2 = new Prices();
-            price2.Classprice = Classprice.Economy;
-            flight2.Pricesarr[0] = price2;
+            //flight2.Classprice = Classprice.Economy;
             flights.Add(flight2);
 
-            var flight3 = new ArrFlight(random);
+            var flight3 = new ArrFlight(random, Classprice.Bissnes, Classprice.Economy);
             flight3.Flightnumber = "ST 764";
             flight3.Direction = "Odessa";
             flight3.Datetime = "7:40";
@@ -64,12 +61,10 @@ namespace Airport
             pasan3.Nationality = Nationality.Jew;
             pasan3.Sex = Sex.Male;
             flight3.Passengersarr.Add(pasan3);
-            var price3 = new Prices();
-            price3.Classprice = Classprice.Economy;
-            flight3.Pricesarr[0] = price3;
+            //flight3.Classprice = Classprice.Economy;
             flights.Add(flight3);
 
-            var flight4 = new DepFlight(random);
+            var flight4 = new DepFlight(random, Classprice.Bissnes, Classprice.Economy);
             flight4.Flightnumber = "DC 678";
             flight4.Direction = "Kiev";
             flight4.Datetime = "17:15";
@@ -83,12 +78,10 @@ namespace Airport
             pasan4.Nationality = Nationality.Ukranian;
             pasan4.Sex = Sex.Female;
             flight4.Passengersarr.Add(pasan4);
-            var price4 = new Prices();
-            price4.Classprice = Classprice.Bissnes;
-            flight4.Pricesarr[0] = price4;
+            //flight4.Classprice = Classprice.Bissnes;
             flights.Add(flight4);
 
-            var flight5 = new DepFlight(random);
+            var flight5 = new DepFlight(random, Classprice.Bissnes, Classprice.Economy);
             flight5.Flightnumber = "QS 6789";
             flight5.Direction = "Toronto";
             flight5.Datetime = "11:10";
@@ -102,9 +95,7 @@ namespace Airport
             pasan5.Nationality = Nationality.Canadian;
             pasan5.Sex = Sex.Male;
             flight5.Passengersarr.Add(pasan5);
-            var price5 = new Prices();
-            price5.Classprice = Classprice.Bissnes;
-            flight5.Pricesarr[0] = price5;
+            //flight5.Classprice = Classprice.Bissnes;
             flights.Add(flight5);
         }
 
@@ -151,8 +142,8 @@ namespace Airport
             Console.WriteLine("|_____________|________|_______|");
             for (int i = 0; i < flights.Count; i++)
             {
-                int rand = random.Next(1000, 5000);
-                Console.WriteLine("|{0,6}    |{1,10} |{2,3}$ |", flights[i].Direction, flights[i].Pricesarr[0].Classprice, rand);
+                //int rand = random.Next(1000, 5000);//!!!!!!!
+                Console.WriteLine("|{0,6}    |{1,10} |{2,3}$ |", flights[i].Direction, flights[i].Classprice, flights[i].Price);
                 Console.WriteLine("|_____________|_______|_______|");
 
             }
@@ -166,7 +157,7 @@ namespace Airport
 
             for (int i = 0; i < flights.Count; i++)
             {
-                Console.WriteLine("|{0,7} |{1,5} |{2,11} |{3,10}  |{4,8}|{5,4}|{6,3} |{7,5}|", flights[i].Flightnumber, flights[i].Passengersarr[0].Name, flights[i].Passengersarr[0].Secondname, flights[i].Passengersarr[0].Nationality, flights[i].Passengersarr[0].Pasport, flights[i].Passengersarr[0].Dateofbirthday, flights[i].Passengersarr[0].Sex, flights[i].Pricesarr[0].Classprice);
+                Console.WriteLine("|{0,7} |{1,5} |{2,11} |{3,10}  |{4,8}|{5,4}|{6,3} |{7,5}|", flights[i].Flightnumber, flights[i].Passengersarr[0].Name, flights[i].Passengersarr[0].Secondname, flights[i].Passengersarr[0].Nationality, flights[i].Passengersarr[0].Pasport, flights[i].Passengersarr[0].Dateofbirthday, flights[i].Passengersarr[0].Sex, flights[i].Classprice);
                 Console.WriteLine(" _____________________________________________________________________________");
             }
         }
@@ -181,11 +172,11 @@ namespace Airport
             key = Console.ReadKey();
             if (key.Key == ConsoleKey.D1 || key.Key == ConsoleKey.NumPad1)
             {
-                cr = new ArrFlight(new Random());
+                cr = new ArrFlight(new Random(), Classprice.Bissnes, Classprice.Economy);//??
             }
             else
             {
-                cr = new DepFlight(new Random());
+                cr = new DepFlight(new Random(),Classprice.Bissnes, Classprice.Economy);//??
             }
 
             Console.Clear();
@@ -206,7 +197,7 @@ namespace Airport
 
             Console.WriteLine();
             Console.WriteLine("Input gate: ");
-            cr.Terminal = Console.ReadLine();
+            cr.Gate = Console.ReadLine();
             Console.ReadKey();
 
             flights.Add(cr);
@@ -317,7 +308,7 @@ namespace Airport
                         Console.WriteLine(" ______________________________________________________________________________");
                         Console.WriteLine("| Number | Name | Second Name | Nationality | Pasport |    DB    | Sex | Class |");
                         Console.WriteLine("|________|______|_____________|_____________|_________|__________|_____|_______|");
-                        Console.WriteLine("|{0,7} |{1,5} |{2,11} |{3,10}  |{4,8}|{5,4}|{6,3} |{7,5}|", flights[i].Flightnumber, flights[i].Passengersarr[0].Name, flights[i].Passengersarr[0].Secondname, flights[i].Passengersarr[0].Nationality, flights[i].Passengersarr[0].Pasport, flights[i].Passengersarr[0].Dateofbirthday, flights[i].Passengersarr[0].Sex, flights[i].Pricesarr[0].Classprice);
+                        Console.WriteLine("|{0,7} |{1,5} |{2,11} |{3,10}  |{4,8}|{5,4}|{6,3} |{7,5}|", flights[i].Flightnumber, flights[i].Passengersarr[0].Name, flights[i].Passengersarr[0].Secondname, flights[i].Passengersarr[0].Nationality, flights[i].Passengersarr[0].Pasport, flights[i].Passengersarr[0].Dateofbirthday, flights[i].Passengersarr[0].Sex, flights[i].Classprice);
                         Console.WriteLine(" _____________________________________________________________________________");
                     }
                 }

@@ -12,7 +12,7 @@ namespace Airport
         static IAirport airport = new Airport();
         static void Main(string[] args)
         {
-            for (int i = 0, j = 0; i < 30; i++)
+            for (int i = 0; i < 30; i++)
             {
                 string s = new string(' ', i);
                 Console.WriteLine("{0}__________________¶¶¶____________________________", s);
