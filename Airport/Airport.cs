@@ -13,7 +13,8 @@ namespace Airport
             Random random = new Random();
 
 
-            var flight1 = new ArrFlight(random, Classprice.Bissnes, Classprice.Economy);
+            var flight1 = new FlightBase(random, Classprice.Bissnes, Classprice.Economy, FlightStatus.Arrival, FlightStatus.Departure);
+            flight1.FlightStatus = FlightStatus.Arrival;
             flight1.Flightnumber = "FS 4422";
             flight1.Direction = "Abu-Dhabi";
             flight1.Datetime = "14:22";
@@ -30,7 +31,8 @@ namespace Airport
            // flight1.Classprice = Classprice.Bissnes;
             flights.Add(flight1);
 
-            var flight2 = new ArrFlight(random, Classprice.Bissnes, Classprice.Economy);
+            var flight2 = new FlightBase(random, Classprice.Bissnes, Classprice.Economy, FlightStatus.Arrival, FlightStatus.Departure);
+            flight2.FlightStatus = FlightStatus.Arrival;
             flight2.Flightnumber = "MN 7564";
             flight2.Direction = "Paris";
             flight2.Datetime = "13:00";
@@ -47,7 +49,8 @@ namespace Airport
             //flight2.Classprice = Classprice.Economy;
             flights.Add(flight2);
 
-            var flight3 = new ArrFlight(random, Classprice.Bissnes, Classprice.Economy);
+            var flight3 = new FlightBase(random, Classprice.Bissnes, Classprice.Economy, FlightStatus.Arrival, FlightStatus.Departure);
+            flight3.FlightStatus = FlightStatus.Departure;
             flight3.Flightnumber = "ST 764";
             flight3.Direction = "Odessa";
             flight3.Datetime = "7:40";
@@ -64,7 +67,8 @@ namespace Airport
             //flight3.Classprice = Classprice.Economy;
             flights.Add(flight3);
 
-            var flight4 = new DepFlight(random, Classprice.Bissnes, Classprice.Economy);
+            var flight4 = new FlightBase(random, Classprice.Bissnes, Classprice.Economy, FlightStatus.Arrival, FlightStatus.Departure);
+            flight4.FlightStatus = FlightStatus.Departure;
             flight4.Flightnumber = "DC 678";
             flight4.Direction = "Kiev";
             flight4.Datetime = "17:15";
@@ -81,7 +85,8 @@ namespace Airport
             //flight4.Classprice = Classprice.Bissnes;
             flights.Add(flight4);
 
-            var flight5 = new DepFlight(random, Classprice.Bissnes, Classprice.Economy);
+            var flight5 = new FlightBase(random, Classprice.Bissnes, Classprice.Economy, FlightStatus.Arrival, FlightStatus.Departure);
+            flight5.FlightStatus = FlightStatus.Arrival;
             flight5.Flightnumber = "QS 6789";
             flight5.Direction = "Toronto";
             flight5.Datetime = "11:10";
@@ -110,8 +115,9 @@ namespace Airport
             Console.WriteLine("| Number  |  Direction   | Date and Time |   Status  | Terminal | Gate|");
             Console.WriteLine(" _____________________________________________________________________");
 
-            for (int i = 0; i < flights.Count; i = i + 1)
-                if (flights[i] is ArrFlight)
+            for (int i = 0; i < flights.Count; i++)
+                //if (flights[i] is ArrFlight)
+                if (flights[i].FlightStatus == FlightStatus.Arrival)
                 {
                     Console.WriteLine("|{0,8} | {1,9}    | {2,10}    | {3,08}  | {4}      |{5}  |", flights[i].Flightnumber, flights[i].Direction, flights[i].Datetime, flights[i].Status, flights[i].Terminal, flights[i].Gate);
                     Console.WriteLine(" _____________________________________________________________________");
@@ -126,7 +132,8 @@ namespace Airport
             Console.WriteLine(" _____________________________________________________________________");
 
             for (int i = 0; i < flights.Count; i = i + 1)
-                if (flights[i] is DepFlight)
+                //if (flights[i] is DepFlight)
+                if (flights[i].FlightStatus == FlightStatus.Departure)
                 {
                     Console.WriteLine("|{0,8} | {1,9}    | {2,10}    | {3,08}  | {4}      |{5}  |", flights[i].Flightnumber, flights[i].Direction, flights[i].Datetime, flights[i].Status, flights[i].Terminal, flights[i].Gate);
                     Console.WriteLine(" _____________________________________________________________________");
@@ -172,11 +179,11 @@ namespace Airport
             key = Console.ReadKey();
             if (key.Key == ConsoleKey.D1 || key.Key == ConsoleKey.NumPad1)
             {
-                cr = new ArrFlight(new Random(), Classprice.Bissnes, Classprice.Economy);//??
+                cr = new FlightBase(new Random(), Classprice.Bissnes, Classprice.Economy, FlightStatus.Arrival, FlightStatus.Departure);//??
             }
             else
             {
-                cr = new DepFlight(new Random(),Classprice.Bissnes, Classprice.Economy);//??
+                cr = new FlightBase(new Random(), Classprice.Bissnes, Classprice.Economy, FlightStatus.Arrival, FlightStatus.Departure);//??
             }
 
             Console.Clear();
