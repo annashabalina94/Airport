@@ -6,47 +6,8 @@ using System.Threading.Tasks;
 
 namespace Airport
 {
-    //class ArrFlight : FlightBase//убрать наследование
-    //{
 
-
-    //    public  ArrFlight(Random random, Classprice Bissnes, Classprice Economy)
-    //    {
-    //        Status = (Status)random.Next(3, 9);
-    //        Classprice = (Classprice)random.Next(1, 3);
-    //        if (Classprice == Classprice.Bissnes)
-    //        {
-    //           Price = 2000;
-    //        }
-    //        else
-    //        {
-    //           Price = 1000;
-    //        }
-    //    }
-
-    //}
-
-    //class DepFlight : FlightBase
-    //{
-    //    public  DepFlight(Random random, Classprice Bissnesm, Classprice Economy)
-    //    {
-    //        Status = (Status)random.Next(1, 9);
-    //        Classprice = (Classprice)random.Next(1, 3);
-
-    //        if (Classprice == Classprice.Bissnes)
-    //        {
-    //           Price = 2000;
-    //        }
-    //        else
-    //        {
-    //        Price = 1000;
-    //        }
-    //    }
-    //}
-
-
-   // abstract 
-        class FlightBase
+    class Flight
     {
         public List<Passengers> Passengersarr = new List<Passengers>();
         public int Price;
@@ -59,11 +20,11 @@ namespace Airport
         public Status Status;
         public FlightStatus FlightStatus;
 
-        public FlightBase(Random random, Classprice Bissnesm, Classprice Economy, FlightStatus Arrival, FlightStatus Departure)
+        public Flight(Random random, Classprice Bissnesm, Classprice Economy, FlightStatus Arrival, FlightStatus Departure)
         {
-            //FlightStatus =(FlightStatus)random.Next(1, 3);
+
             Classprice = (Classprice)random.Next(1, 3);
-            if(FlightStatus==FlightStatus.Arrival)
+            if (FlightStatus == FlightStatus.Arrival)
             {
                 Status = (Status)random.Next(3, 9);
             }
@@ -73,11 +34,11 @@ namespace Airport
             }
             if (Classprice == Classprice.Bissnes)
             {
-               Price = 2000;
+                Price = 2000;
             }
             else
             {
-               Price = 1000;
+                Price = 1000;
             }
         }
     }
